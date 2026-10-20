@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+     <input type="button" id="aff/mass" value="afficher">
+    </form>
+      <p id="message"></p>
+     <script language="JavaScript">
+      
+      let input=document.getElementById("aff/mass");
+      let text= document.getElementById("message");
+      let temp =true;
+       input.addEventListener("click",function (event){
+        event.preventDefault();
+        if(temp==true){
+        text.innerText="voila le text.";
+       input.setAttribute("value","massquer");
+         temp=false; 
+      }
+       else{
+      
+        text.innerText="";
+       input.setAttribute("value","afficher");
+        temp=true; 
+      }
+       });
+
+
+
+
+
+
+      
+
+
+
+
+     </script>
+
+
+
+
+
+
+
+</body>
+</html>

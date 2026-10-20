@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modale</title>
+     
+ <style>
+  #conteneur{
+   border: solid black 1px;
+   border-radius:10px ;
+   width:250px ;
+   height: 250px;
+  }
+   #salut{
+    margin:30px ;
+   }
+  #Tm{
+   margin: 10px;
+  }
+  #A{
+   margin-left: 100px;
+   width:50px ;
+   height:30px ;
+   background-color:blue ;
+  }
+  </style> 
+</head>
+<body> 
+    <div id="conteneur" >
+    <h1 id="salut">Bienvenue!</h1>
+    <p id="Tm">Cliquer sur le bouton pour ouvrir la modale.</p>
+     <input type="button" value="ouvrir" id="A">
+    </div>
+    <script>
+    let button=document.getElementById("A");
+    let para=document.getElementById("Tm");
+    let titre=document.getElementById("salut");
+    let ouvert=false;
+    button.addEventListener("click",function(){
+    if(ouvert==false){
+    para.innerText="Bonjour !Ceci est une fenetre modale.";
+    titre.innerText="Notifacation";
+    button.value="fermer"
+    button.style.backgroundColor="red";
+    ouvert=true;
+     }
+    else{
+         para.innerText="Cliquer sur le bouton pour ouvrir la modale.";
+    titre.innerText="Bienvenue!";
+    button.value="ouvrir"
+    button.style.backgroundColor="blue";
+    ouvert=false;
+    }
+    });
+    </script>
+</body>
+</html>

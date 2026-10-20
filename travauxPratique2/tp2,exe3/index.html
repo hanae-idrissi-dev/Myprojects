@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulaire</title>
+    <style>
+  #for {
+    margin: 30px;
+
+
+     }
+   #message {
+   color:red;
+   font-size: larger;
+
+   }
+
+    </style>
+
+
+
+</head>
+<body>
+   <form id="for">
+    <label for="nom" >nom:</label>
+    <input type="text" id="nom" placeholder="ecrivez votre nom" value=""></br></br>
+    <label for="email">email:</label>
+    <input type="email" id="email" placeholder="ecrivez votre email" value=""></br></br>
+    <input type="submit" value="soumettre" id="soumettre">
+     <p id="message"></p>
+
+   </form> 
+    
+
+
+   <script>
+    let valide=document.getElementById("message");
+ let email=document.getElementById("email");
+ let nom=document.getElementById("nom");
+ let formulaire=document.getElementById("for");
+ formulaire.addEventListener("submit",function(event)
+  {
+   
+
+
+   if(email.value=="" && nom.value==""){
+
+    event.preventDefault();
+     valide.innerText="il faut remplire les champs!!";}
+    else if (email.value==""){
+        event.preventDefault();
+
+        valide.innerText="il faut remplire l'email!!";
+     }
+     else if (nom.value==""){
+        event.preventDefault();
+     valide.innerText="il faut remplire le nom!!";
+     }
+
+
+  });
+   </script>
+   
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

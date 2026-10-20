@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #conteneur {
+            display: flex;
+            justify-content: center;
+            gap: 150px;
+            margin-top: 30px;
+        }
+
+        .zone {
+            width: 150px;
+            min-height: 150px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            background-color: #f2f2f2;
+        }
+
+        #depot {
+            background-color: #fff;
+            border: 2px dashed #ccc;
+        }
+
+        .element {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px;
+            margin: 8px auto;
+            width: 90px;
+            border-radius: 4px;
+            cursor: grab;
+        }
+
+        .element:active {
+            cursor: grabbing;
+        }
+
+        @media (max-width: 500px) {
+            #conteneur {
+                gap: 15px;
+            }
+
+            .zone {
+                width: 120px;
+                padding: 5px;
+            }
+
+            .element {
+                width: 85px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>Drag and Drop Exemple</h3>
+
+    <div id="conteneur">
+
+        <div class="zone" id="source">
+            <strong>&aacute; d&eacute;placer</strong>
+
+            <div class="element" draggable="true">&eacute;l&eacute;ment 1</div>
+            <div class="element" draggable="true">&eacute;l&eacute;ment 2</div>
+            <div class="element" draggable="true">&eacute;l&eacute;ment 3</div>
+        </div>
+
+        <div class="zone" id="depot">
+            <strong>D&eacute;poser ici</strong>
+        </div>
+
+    </div>
+
+    <script>
+        let elements = document.querySelectorAll(".element");
+        let depot = document.getElementById("depot");
+        let source = document.getElementById("source");
+
+        elements.forEach(function(element) {
+
+            element.addEventListener("dragstart", function(event) {
+                event.dataTransfer.setData("text", event.target.innerText);
+                event.dataTransfer.setData("id", event.target.id);
+            });
+
+        });
+
+        depot.addEventListener("dragover", function(event) {
+            event.preventDefault();
+        });
+
+        depot.addEventListener("drop", function(event) {
+            event.preventDefault();
+
+            let texte = event.dataTransfer.getData("text");
+
+            let element = Array.from(elements).find(function(elem) {
+                return elem.innerText === texte;
+            });
+
+            if (element) {
+                depot.appendChild(element);
+            }
+        });
+
+        source.addEventListener("dragover", function(event) {
+            event.preventDefault();
+        });
+
+        source.addEventListener("drop", function(event) {
+            event.preventDefault();
+
+            let texte = event.dataTransfer.getData("text");
+
+            let element = Array.from(elements).find(function(elem) {
+                return elem.innerText === texte;
+            });
+
+            if (element) {
+                source.appendChild(element);
+            }
+        });
+    </script>
+
+</body>
+</html>

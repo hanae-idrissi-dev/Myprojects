@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu</title>
+   <style>
+   #conteneur{
+    width:300px ;
+    height:250px ;
+    border: solid black 1px;
+    border-radius: 10px ;}
+    #menu{
+    width:250px ;
+    margin: 20px;
+    height:40px ;
+    }
+    li{
+     margin-bottom:10px ;
+    font-size:20px ;
+    }
+    ul{
+    display: none;
+
+    }
+   
+   </style>
+</head>
+<body>
+   <div id="conteneur" >
+  <input type="button" id="menu" value="les langages de programmation ^">
+   <ul id="choix">
+   <li>java</li>
+    <li>Python</li>
+    <li>javascript</li>
+    <li>Dart</li>
+   </ul>
+    <script>
+    let menu =document.getElementById("menu");
+    let list=document.getElementById("choix");
+    menu.addEventListener("click",function(){
+       if(list.style.display=="none"){
+        list.style.display="block";
+        menu.value="les langages de programmation >";
+       }
+       else{
+
+       list.style.display="none";
+       menu.value="les langages de programmation ^";
+       }
+    });
+    </script>
+</body>
+</html>

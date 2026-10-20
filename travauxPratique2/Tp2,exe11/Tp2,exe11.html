@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtrage de produits</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+
+        #conteneur {
+            width: 80%;
+            margin: auto;
+        }
+
+        h3 {
+            border-bottom: 2px solid #aaa;
+            padding-bottom: 10px;
+        }
+
+        #recherche {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="conteneur">
+
+        <h3>Liste de Produits</h3>
+
+        <input
+            type="text"
+            id="recherche"
+            placeholder="Rechercher un produit..."
+        >
+
+        <ul id="liste">
+            <li>Ordinateur Portable</li>
+            <li>Smartphone</li>
+            <li>Casque Audio</li>
+            <li>Écran LED</li>
+            <li>Clavier Mécanique</li>
+            <li>Souris Sans Fil</li>
+        </ul>
+
+    </div>
+
+    <script>
+        let recherche = document.getElementById("recherche");
+        let produits = document.querySelectorAll("#liste li");
+
+        recherche.addEventListener("input", function () {
+
+            let texte = recherche.value.toLowerCase();
+
+            produits.forEach(function (produit) {
+
+                let nom = produit.textContent.toLowerCase();
+
+                if (nom.includes(texte)) {
+                    produit.style.display = "block";
+                } else {
+                    produit.style.display = "none";
+                }
+
+            });
+
+        });
+    </script>
+
+</body>
+</html>

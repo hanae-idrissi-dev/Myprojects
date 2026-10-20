@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+     <P>  
+      Bonjour tout le monde!  
+     </p>
+    </div></br>
+     <button type="button" onclick="modifiercouleur()" ondblclick="couleurinitial()" style="background-color:rgba(red, green, blue, alpha);">click me</button>
+  <script>
+   let elemnt = document.getElementById("div1");
+
+    elemnt.style.border ="1px solid black";
+    elemnt.style.fontSize="40px";
+    elemnt.style.width="300px";
+    elemnt.style.margin="20px";
+   let elemnts =document.querySelector("p");
+    elemnts.style.padding ="20px";
+  let button=document.getElementsByTagName("button");
+   button[0].style.width="100px";
+   button[0].style.margin="20px";
+   
+    function modifiercouleur(){
+
+        elemnt.style.backgroundColor="yellow";
+
+    }
+    function couleurinitial(){
+    elemnt.style.backgroundColor="";
+    }
+
+
+  </script>
+
+
+
+
+
+
+</body>
+</html>

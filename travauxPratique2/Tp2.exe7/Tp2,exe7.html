@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Chronom&eacute;tre</title>
+</head>
+<body>
+
+    <h1>Temps &eacute;coul&eacute; :</h1>
+    <p id="temps">0 seconde(s)</p>
+
+    <script>
+        let secondes = 0;
+
+        setInterval(function() {
+            secondes++;
+            document.getElementById("temps").innerText =
+                secondes + " seconde(s)";
+        }, 1000);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculatrice</title>
+  <style>
+  #conteneur{
+   border: solid black 2px;
+   width:200px ;
+   height: 300px;
+    padding: 20px;
+    border-radius:10px ;
+  }
+  #resultats {
+   border: solid black 1px;
+   width: 150px; 
+   height: 40px ;
+   padding-left: 20px;
+   padding-right:20px ;
+   padding-top: 10px;
+   border-radius: 5px;
+  }
+   input{
+    width: 45px; 
+    height: 30px;
+   }
+  </style>
+</head>
+<body>
+    <div id="conteneur">
+    <div id="resultats"></div></br>
+    <input type="button" value="C">
+    <input type="button" value="&#9003;" id="effacer">
+    <input type="button" value="/">
+    <input type="button" value="*"  ></br></br>
+    <input type="button" value="7">
+    <input type="button" value="8">
+    <input type="button" value="9">
+    <input type="button" value="-"></br></br>
+    <input type="button" value="4">
+    <input type="button" value="5">
+    <input type="button" value="6">
+    <input type="button" value="+"  ></br></br>
+    <input type="button" value="1">
+    <input type="button" value="2">
+    <input type="button" value="3">
+    <input type="button" value="="></br></br>
+    <input type="button" value="0">
+    <input type="button" value=".">
+    </div>
+    <script>
+    let elements=document.querySelectorAll("input");
+    let div=document.getElementById("resultats");
+    let nombre1=0;
+    let operateur="";
+    let nombre2=0;
+      elements=Array.from(elements);
+      elements.forEach(element =>{
+     element.addEventListener("click",()=>{
+        if(element.id=="effacer"){
+        div.innerText=div.innerText.slice(0, -1);
+
+        }
+      else if (element.value=="+" ||element.value=="-"||element.value=="*"||element.value=="/"){
+      nombre1=Number(div.innerText);
+      operateur=element.value;
+      div.innerText="";}
+     else if(element.value=="="){
+     let nombre2=Number(div.innerText);
+          if(operateur=="+")
+     div.innerText=nombre1+nombre2;
+       else if(operateur=="-"){
+       div.innerText=nombre1-nombre2;}
+       else if(operateur=="*"){
+      div.innerText=nombre1*nombre2;
+       }
+       else if(operateur=="/"){
+       div.innerText=nombre1/nombre2;
+       }}
+      else{ div.innerText+=element.value;
+      }
+    });});
+    </script>
+</body>
+</html>

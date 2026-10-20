@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive avec JavaScript</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: white;
+        }
+
+        h3 {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        #conteneur {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5px;
+        }
+
+        .element {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+
+        
+        .mobile {
+            grid-template-columns: 1fr !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>Responsive Page avec JavaScript</h3>
+
+    <div id="conteneur">
+        <div class="element">Bloc 1</div>
+        <div class="element">Bloc 2</div>
+        <div class="element">Bloc 3</div>
+        <div class="element">Bloc 4</div>
+        <div class="element">Bloc 5</div>
+    </div>
+
+    <script>
+        let conteneur = document.getElementById("conteneur");
+
+        function adapterLayout() {
+            if (window.innerWidth < 600) {
+                conteneur.classList.add("mobile");
+            } else {
+                conteneur.classList.remove("mobile");
+            }
+        }
+
+    
+        adapterLayout();
+
+    
+        window.addEventListener("resize", adapterLayout);
+    </script>
+
+</body>
+</html>

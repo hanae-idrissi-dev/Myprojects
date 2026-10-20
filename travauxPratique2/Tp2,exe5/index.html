@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>galarie</title>
+   <style>
+   #conteneur{
+   text-align: center;
+   }
+   img{
+
+    width:200px ;
+    height: 200px;
+   object-fit: cover;
+    display:none ;
+   }
+  input{
+  margin-left: 200px;
+  }
+   </style>
+</head>
+<body>
+    <div id="conteneur">
+    <img src="c:\Users\Pc\Documents\newfolder\59998803-lion-portrait-animal-repos-sur-rock-gros-chat-a-la-recherche-avant-faune-la-nature-dans-sauvage-majestueux-fort-bete-paisible-et-puissant-photo.jpeg" alt="image 1">
+    <img src="c:\Users\Pc\Documents\newfolder\images (5).jpeg" alt="image 2">
+    <img src="c:\Users\Pc\Documents\newfolder\images (6).jpeg" alt="image 3">
+    <img src="c:\Users\Pc\Documents\newfolder\images (7).jpeg" alt="image 4">
+    <img src="c:\Users\Pc\Documents\newfolder\cp-e-wittwer-6-2-500x500-ad0950baee13.webp" alt="image 5">
+</br>
+   <input type="button" value="&lt;Pr&eacute;c&eacute;dent" id="precedent">
+   <input type="button" value="Suivant &gt;"  id="suivant">
+ 
+    </div>
+  <script>
+    let images = document.querySelectorAll("img");
+    let index = 0;
+
+    
+    images[index].style.display = "inline-block";
+
+
+    document.getElementById("suivant").addEventListener("click", function() {
+
+        images[index].style.display = "none";
+
+        index++;
+
+        if (index >= images.length) {
+            index = 0;
+        }
+
+        images[index].style.display = "inline-block";
+
+    });
+
+    
+    document.getElementById("precedent").addEventListener("click", function() {
+
+        images[index].style.display = "none";
+
+        index--;
+
+        if (index < 0) {
+            index = images.length - 1;
+        }
+
+        images[index].style.display = "inline-block";
+
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progresst</title>
+   <style>
+   progress{
+
+   width:700px ;
+   height: 40px; 
+   accent-color: rgb(44, 148, 44);
+   }
+  #progress{
+   
+   margin-left:200px ;
+   background-color: violet;
+
+  }
+   </style>
+</head>
+<body>
+    <h1 style="margin-left: 100px; ">Barre de Progression</h1> 
+    <progress id="pro" value="30" max="100"></progress></br>
+    <input type="button" value="Demarrer la Progression" id="progress">
+     <script>
+       let btn=document.getElementById("progress");
+       let Barre=document.getElementById("pro");
+       btn.addEventListener("click",function(){
+        pro.value+=+10;
+
+
+       });
+
+     </script>
+
+
+
+
+</body>
+</html>

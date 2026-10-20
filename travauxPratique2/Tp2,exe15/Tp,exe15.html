@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sombre/Clair</title>
+    <style>
+    
+   #SC{
+   
+  width:300px ;
+    height: 100px;
+    border:black solid 1px;
+     border-radius:10px ;
+     margin:30px;
+     padding-left: 30px;
+   }
+   #Theme{
+   background-color: blue;
+   color: aliceblue;
+   margin-left: 40px; 
+   border-radius:5px ;
+   }
+    </style>
+<body>
+    
+    <div id ="SC">
+    <p style="font-size:large;">Basculer entre Th&eacute;me Clair et Sombre</p>
+    <input type="button"  id="Theme" value="Activer le Theme sombre">
+    </div>
+    
+   <script>
+   let body=document.getElementsByTagName("body");
+   let btn=document.getElementById("Theme") ;
+   let para=document.getElementsByTagName("p");
+   let div2=document.getElementById("SC");
+   let Clair= true;
+   btn.addEventListener("click" ,function(){
+   if(Clair==true){
+    body[0].style.backgroundColor="white";
+    para[0].style.color="";
+    btn.value= "Activer le Theme Sombre";
+    div2.style.border="black solid 1px";
+     btn.style.backgroundColor="blue";
+     Clair=false;
+     }
+    else{
+    body[0].style.backgroundColor="black";
+    para[0].style.color="aliceblue";
+    btn.value= "Activer le Theme Clair";
+    div2.style.border="white solid 1px";
+    btn.style.backgroundColor="gray";
+     Clair=true;
+    }
+   });
+  appliquerTheme();
+
+btn.addEventListener("click", function() {
+
+    if (Clair == true) {
+        localStorage.setItem("theme", "clair");
+    } else {
+        localStorage.setItem("theme", "sombre");
+    }
+
+    appliquerTheme();
+
+});
+
+
+
+
+
+
+
+
+   </script>
+</body>
+</html>

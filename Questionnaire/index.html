@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang=" en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>questionnaire</title>
+<style type="text/css">
+div {
+padding: 10px;
+}
+p {
+color: blue;
+font-size: larger;
+}
+button {
+background-color:bisque;
+font-size: medium;
+
+}
+body {
+margin: 30px;
+}
+
+#fenetre{
+
+
+    display: none;
+    background-color: white;
+    border: 2px solid blue;
+    padding: 20px;
+    width: 250px;
+    margin: 10px;
+    border-radius: 10px;
+
+}
+
+</style>
+
+
+
+
+
+</head>
+<body>
+  
+  <h1>Quetionnaire:les connaissances en infrmatique</h1>
+ <form name="qcm">
+    <p>Q1:Quels sont les langages de programmation?</p>
+    <div>
+       <input type="checkbox" name="Q1" value="html" >html<br>
+       <input type="checkbox" name="Q1" value="Windows" >Windows<br>
+       <input type="checkbox" name="Q1" value="Java" >Java<br>
+       <input type="checkbox" name="Q1" value="Python" >Python<br>
+       </div>
+    <p>Q2:Quels sont les syst&eacute;mes d'exploitaion?</p>
+    <div>
+      <input type="checkbox" name="Q2" value="linux" >linux<br>
+      <input type="checkbox" name="Q2" value="Windows" >Windows<br> 
+      <input type="checkbox" name="Q2" value="Microsoft" >Microsoft Word<br>
+      <input type="checkbox" name="Q2" value="Android" >Android<br>
+      </div>
+     <p>Q3:Quels sont les langages utilis&eacute;s pour le d&eacute;veloppement web?</p>
+     <div>
+      <input type="checkbox" name="Q3" value="HTML" >HTML<br>
+      <input type="checkbox" name="Q3" value="JavaScript" > JavaScript<br> 
+      <input type="checkbox" name="Q3" value="Css" >Css<br>
+      <input type="checkbox" name="Q3" value="SQl" >photoshop<br>
+      </div>
+   <p>Q4:quel langage permet d'ajouter de l'interactivit&eacute; &aacute; une page web?</p>
+   <div>
+    <input type="radio" name="Q4" value="HTML" >HTML<br>
+     <input type="radio" name="Q4" value="JavaScript" > JavaScript<br> 
+     <input type="radio" name="Q4" value="Css" >Css<br>
+     <input type="radio" name="Q4" value="SQl" >SQl<br>
+     </div>
+   <p>Q5:Que signifie CPU?</p>
+   <div>
+     <input type="radio" name="Q5" value="Central Processing Unit" >Central Processing Unit<br>
+     <input type="radio" name="Q5" value="Computer Personal Unit" >Computer Personal Unit<br> 
+     <input type="radio" name="Q5" value="Central Program Unit" >Central Program Unit<br>
+     <input type="radio" name="Q5" value="Control Processing Utility" >Control Processing Utility<br>
+     </div>
+     <p>initialiser vos r&eacute;ponce:</p>
+     
+     <button type="button" onclick="reset()">initialiser</button><br>
+     <p>voir la Correction:</p>
+     <button type="button" onclick="window.open('correction.html')">voir la Correction</button><br>
+     <p>corriger:</p>
+     <button type="button" onclick="corriger()">Correction</button>
+     <div id="fenetre">
+     <div id="resultats"></div>
+ 
+       <button  onclick="fermer()">fermer</button>
+     </div>
+     
+     
+ </form>
+<script src="monscript.js"> </script>
+  
+</body>
+</html>

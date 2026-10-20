@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 4</title>
+    
+</head>
+
+<body>
+
+    <h2>Entrer le premier temps :</h2>
+
+    <div class="ligne">
+        Heure(s)
+        <input type="number" id="h1" value="0">
+        Minute(s)
+        <input type="number" id="m1" value="0">
+        Seconde(s)
+        <input type="number" id="s1" value="0">
+    </div>
+    <h2>Entrer le Deuxim&eacute;e temps :</h2>
+    <div class="ligne">
+        Heure(s)
+        <input type="number" id="h2" value="0">
+        Minute(s)
+        <input type="number" id="m2" value="0">
+        Seconde(s)
+        <input type="number" id="s2" value="0">
+    </div>
+    <h2>Entrer le troisième temps :</h2>
+    <div class="ligne">
+        Heure(s)
+        <input type="number" id="h3" value="0">
+        Minute(s)
+        <input type="number" id="m3" value="0">
+        Seconde(s)
+        <input type="number" id="s3" value="0">
+    </div>
+    <h2>Total des trois temps :</h2>
+    <div class="resultat">
+        Jour(s)
+        <input type="number" id="jours" value="0" readonly>
+        Heure(s)
+        <input type="number" id="heures" value="0" readonly>
+        Minute(s)
+        <input type="number" id="minutes" value="0" readonly>
+        Seconde(s)
+        <input type="number" id="secondes" value="0" readonly>
+    </div>
+
+    <input type="button" value="Somme" onclick="calculerSomme()">
+    <input type="button" value="Effacer" onclick="effacer()">
+    <script src="tp4.js"></script>
+    
+
+</body>
+</html>
